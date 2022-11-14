@@ -20,8 +20,8 @@ var app = new Vue({
         
     },
 
-     toDoEliminate(){     
-         this.toDo.splice(this.description, 1)
+     toDoEliminate( index){     
+         this.toDo.splice(index, 1)
      },
 
      toDoDone(index){  

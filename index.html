@@ -42,10 +42,10 @@
               <li
                 v-for="(description, index) in toDo"
                 class="list-group-item d-flex justify-content-between"
-                @click="toDoDone(index)"
               >
                 <span
                   :class=" (toDo[index].done == true) ? 'text-decoration-line-through' : '' "
+                  @click="toDoDone(index)"
                 >
                   {{toDo[index].description}}
                 </span>
