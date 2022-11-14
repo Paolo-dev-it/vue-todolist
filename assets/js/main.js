@@ -14,12 +14,21 @@ var app = new Vue({
   },
 
   methods: {
+
     toDoTasks(){
         
     },
 
-    toDoCompleted(){
-        this.toDo.splice(this.description, 1)
-    }
+     toDoEliminate(){     
+         this.toDo.splice(this.description, 1)
+     },
+
+     toDoDone(index){  
+          this.toDo[index].done = true
+          
+     },
+
+     
   },
+  
 });

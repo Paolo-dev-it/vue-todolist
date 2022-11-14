@@ -41,9 +41,19 @@
                 v-for="(description, index) in toDo"
                 class="list-group-item d-flex justify-content-between"
               >
-                {{toDo[index].description}}<span @click="toDoCompleted(index)"
-                  ><i class="fa-solid fa-x text-danger"></i
-                ></span>
+                <span
+                  :class=" (toDo[index].done == true) ? 'text-decoration-line-through' : '' "
+                >
+                  {{toDo[index].description}}
+                </span>
+                <i
+                  class="fa-regular fa-circle-check text-success"
+                  @click="toDoDone(index)"
+                ></i>
+                <i
+                  class="fa-solid fa-x text-danger"
+                  @click="toDoEliminate(index)"
+                ></i>
               </li>
             </ul>
             <h2 v-else>Non sono presenti elementi</h2>
