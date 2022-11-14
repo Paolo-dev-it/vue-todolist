@@ -4,12 +4,22 @@ var app = new Vue({
     toDo: [
       {
         description: "comprare il pane",
+        done: false,
       },
       {
         description: "comprare la pasta",
+        done: false,
       },
     ],
   },
 
-  methods: {},
+  methods: {
+    toDoTasks(){
+        
+    },
+
+    toDoCompleted(){
+        this.toDo.splice(this.description, 1)
+    }
+  },
 });

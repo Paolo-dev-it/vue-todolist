@@ -16,13 +16,40 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
-    <header></header>
     <main>
-      <div id="root"></div>
+      <div id="root">
+        <div class="container text-center mt-5">
+          <div class="">
+            <input type="text" placeholder="Inserisci la nuova task" />
+            <button type="button" class="btn btn-primary">Add</button>
+          </div>
+
+          <div class="w-50 m-auto mt-5">
+            <ul class="list-group list-group-flush" v-if="toDo.length > 0">
+              <li
+                v-for="(description, index) in toDo"
+                class="list-group-item d-flex justify-content-between"
+              >
+                {{toDo[index].description}}<span @click="toDoCompleted(index)"
+                  ><i class="fa-solid fa-x text-danger"></i
+                ></span>
+              </li>
+            </ul>
+            <h2 v-else>Non sono presenti elementi</h2>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Bootstrap JavaScript Libraries -->
