@@ -31,8 +31,10 @@
       <div id="root">
         <div class="container text-center mt-5">
           <div class="">
-            <input type="text" placeholder="Inserisci la nuova task" />
-            <button type="button" class="btn btn-primary">Add</button>
+            <input v-model="text" class="input-group-button" />
+            <button @click="addTask" class="btn btn-primary">
+              <i class="fa fa-plus"></i> New task
+            </button>
           </div>
 
           <div class="w-50 m-auto mt-5">
@@ -40,16 +42,13 @@
               <li
                 v-for="(description, index) in toDo"
                 class="list-group-item d-flex justify-content-between"
+                @click="toDoDone(index)"
               >
                 <span
                   :class=" (toDo[index].done == true) ? 'text-decoration-line-through' : '' "
                 >
                   {{toDo[index].description}}
                 </span>
-                <i
-                  class="fa-regular fa-circle-check text-success"
-                  @click="toDoDone(index)"
-                ></i>
                 <i
                   class="fa-solid fa-x text-danger"
                   @click="toDoEliminate(index)"
