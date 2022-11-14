@@ -31,7 +31,11 @@
       <div id="root">
         <div class="container text-center mt-5">
           <div class="">
-            <input v-model="text" class="input-group-button" />
+            <input
+              v-on:keyup.enter="addTask"
+              v-model="text"
+              class="input-group-button"
+            />
             <button @click="addTask" class="btn btn-primary">
               <i class="fa fa-plus"></i> New task
             </button>
