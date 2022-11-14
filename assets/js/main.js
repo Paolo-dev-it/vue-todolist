@@ -25,12 +25,12 @@ var app = new Vue({
      },
 
      toDoDone(index){  
-          this.toDo[index].done = true
-        //   if(this.toDo[index].done = true){
-        //     return this.toDo[index].done = false
-        //   } else {
-        //     return this.toDo[index].done = true
-        //   }
+          
+          if(this.toDo[index].done == true){
+            return this.toDo[index].done = false
+          } else {
+            return this.toDo[index].done = true
+          }
           
      },
 
