@@ -29,12 +29,13 @@
   <body>
     <main>
       <div id="root">
-        <div class="container text-center mt-5">
+        <div class="container text-center p-5">
           <div class="">
             <input
               v-on:keyup.enter="addTask"
               v-model="text"
               class="input-group-button"
+              placeholder="Add new task"
             />
             <button @click="addTask" class="btn btn-primary">
               <i class="fa fa-plus"></i> New task
@@ -53,13 +54,15 @@
                 >
                   {{toDo[index].description}}
                 </span>
+
                 <i
                   class="fa-solid fa-x text-danger"
                   @click="toDoEliminate(index)"
-                ></i>
+                >
+                </i>
               </li>
             </ul>
-            <h2 v-else>Non sono presenti elementi</h2>
+            <h2 v-else>Non sono presenti nuove task :)</h2>
           </div>
         </div>
       </div>
